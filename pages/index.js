@@ -883,7 +883,7 @@ export default function Home() {
                     : <ResponsiveContainer width="100%" height={220}>
                         <PieChart><Pie data={m.expPie} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={85} innerRadius={45} paddingAngle={2}>
                           {m.expPie.map((_, i) => <Cell key={i} fill={PIE_COLORS[i % PIE_COLORS.length]} />)}
-                        </Pie><Tooltip formatter={v => currency(v)} contentStyle={{ background: "#1A2035", border: "1px solid #2A3454", borderRadius: 8, fontSize: 12 }} /></PieChart>
+                        </Pie><Tooltip formatter={v => currency(v)} contentStyle={{ background: "#1A2035", border: "1px solid #2A3454", borderRadius: 8, fontSize: 12, color: "#F1F3F9" }} itemStyle={{ color: "#F1F3F9" }} labelStyle={{ color: "#F1F3F9" }} /></PieChart>
                       </ResponsiveContainer>
                   }
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
@@ -902,7 +902,7 @@ export default function Home() {
                     : <ResponsiveContainer width="100%" height={220}>
                         <PieChart><Pie data={m.volPie} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={85} innerRadius={45} paddingAngle={2}>
                           {m.volPie.map((_, i) => <Cell key={i} fill={PIE_COLORS[(i+4) % PIE_COLORS.length]} />)}
-                        </Pie><Tooltip formatter={v => currency(v)} contentStyle={{ background: "#1A2035", border: "1px solid #2A3454", borderRadius: 8, fontSize: 12 }} /></PieChart>
+                        </Pie><Tooltip formatter={v => currency(v)} contentStyle={{ background: "#1A2035", border: "1px solid #2A3454", borderRadius: 8, fontSize: 12, color: "#F1F3F9" }} itemStyle={{ color: "#F1F3F9" }} labelStyle={{ color: "#F1F3F9" }} /></PieChart>
                       </ResponsiveContainer>
                   }
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
