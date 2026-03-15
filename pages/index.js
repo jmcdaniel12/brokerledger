@@ -165,6 +165,92 @@ function getInitialData() {
   };
 }
 
+function generateDemoData() {
+  const demoDeals = [
+    // ── Closed deals spread across months ──
+    { id: id(), propertyName: "Parkside Office Tower", propertyType: "Office", address: "2100 3rd Ave N, Birmingham, AL 35203", salePrice: 4200000, commission: 126000, commissionRate: 3.0, stage: "Closed", closeMonth: 0, client: "Whitfield Capital Group", sqft: 42000, dealType: "Sale", notes: "Class A office, fully leased, 6.2% cap rate" },
+    { id: id(), propertyName: "Magnolia Retail Center", propertyType: "Retail", address: "801 Lakeshore Pkwy, Homewood, AL 35209", salePrice: 2850000, commission: 99750, commissionRate: 3.5, stage: "Closed", closeMonth: 0, client: "Southeast Retail Partners", sqft: 18500, dealType: "Buyer Rep", notes: "Strip center, 92% occupied, NNN leases" },
+    { id: id(), propertyName: "Irondale Distribution Hub", propertyType: "Industrial", address: "500 Industrial Ln, Irondale, AL 35210", salePrice: 5600000, commission: 168000, commissionRate: 3.0, stage: "Closed", closeMonth: 1, client: "Alliance Logistics LLC", sqft: 85000, dealType: "Sale", notes: "Cross-dock facility, 28ft clear height" },
+    { id: id(), propertyName: "Summit Medical Plaza", propertyType: "Medical", address: "3200 Grandview Pkwy, Birmingham, AL 35243", salePrice: 3400000, commission: 119000, commissionRate: 3.5, stage: "Closed", closeMonth: 1, client: "UAB Health System", sqft: 22000, dealType: "Seller Rep", notes: "Medical office, recently renovated" },
+    { id: id(), propertyName: "Riverside Lofts", propertyType: "Multifamily", address: "1440 1st Ave S, Birmingham, AL 35233", salePrice: 7200000, commission: 180000, commissionRate: 2.5, stage: "Closed", closeMonth: 2, client: "Greystone Residential", sqft: 64000, dealType: "Sale", notes: "72-unit, value-add opportunity, historic district" },
+    { id: id(), propertyName: "Hoover Crossroads Shopping", propertyType: "Retail", address: "2780 John Hawkins Pkwy, Hoover, AL 35244", salePrice: 1950000, commission: 68250, commissionRate: 3.5, stage: "Closed", closeMonth: 2, client: "Brennan Retail Holdings", sqft: 12000, dealType: "Buyer Rep", notes: "Shadow-anchored by Target" },
+    { id: id(), propertyName: "Tech Park Office Lease", propertyType: "Office", address: "4600 Valleydale Rd, Birmingham, AL 35242", salePrice: 890000, commission: 44500, commissionRate: 5.0, stage: "Closed", closeMonth: 3, client: "Innovate Birmingham", sqft: 8500, dealType: "Lease", notes: "5-year NNN lease, tech tenant" },
+    { id: id(), propertyName: "Cahaba River Mixed-Use", propertyType: "Mixed-Use", address: "3100 Cahaba Rd, Mountain Brook, AL 35223", salePrice: 6100000, commission: 183000, commissionRate: 3.0, stage: "Closed", closeMonth: 3, client: "Cahaba Development Co", sqft: 35000, dealType: "Sale", notes: "Retail ground floor, 12 residential units above" },
+    { id: id(), propertyName: "Airport Industrial Park", propertyType: "Industrial", address: "700 Airway Blvd, Birmingham, AL 35235", salePrice: 3800000, commission: 114000, commissionRate: 3.0, stage: "Closed", closeMonth: 4, client: "Birmingham Air Cargo LLC", sqft: 55000, dealType: "Sale", notes: "Near BHM airport, rail siding access" },
+    { id: id(), propertyName: "Vestavia Hills MOB", propertyType: "Medical", address: "1050 Montgomery Hwy, Vestavia Hills, AL 35216", salePrice: 2200000, commission: 77000, commissionRate: 3.5, stage: "Closed", closeMonth: 4, client: "Ascension St. Vincent's", sqft: 15000, dealType: "Seller Rep", notes: "Dental/dermatology tenants, long-term leases" },
+    { id: id(), propertyName: "Five Points Retail", propertyType: "Retail", address: "1101 20th St S, Birmingham, AL 35205", salePrice: 1300000, commission: 52000, commissionRate: 4.0, stage: "Closed", closeMonth: 5, client: "Five Points Ventures", sqft: 6800, dealType: "Sale", notes: "Prime Southside location, restaurant tenant" },
+    { id: id(), propertyName: "Colonnade Office Sublease", propertyType: "Office", address: "3000 Colonnade Pkwy, Birmingham, AL 35243", salePrice: 420000, commission: 25200, commissionRate: 6.0, stage: "Closed", closeMonth: 5, client: "Regions Financial Corp", sqft: 4200, dealType: "Lease", notes: "3-year sublease, furnished" },
+
+    // ── Active pipeline deals ──
+    { id: id(), propertyName: "Trussville Town Center", propertyType: "Retail", address: "5950 Trussville Crossings Pkwy, Trussville, AL 35235", salePrice: 8500000, commission: 255000, commissionRate: 3.0, stage: "Under Contract", closeMonth: 6, client: "National Retail Holdings", sqft: 52000, dealType: "Sale", notes: "Grocery-anchored, 95% leased" },
+    { id: id(), propertyName: "Oxmoor Industrial Campus", propertyType: "Industrial", address: "200 Oxmoor Rd, Homewood, AL 35209", salePrice: 12000000, commission: 300000, commissionRate: 2.5, stage: "Due Diligence", closeMonth: 7, client: "Prologis Southeast", sqft: 145000, dealType: "Buyer Rep", notes: "Portfolio deal — 3 buildings, phase 1 environmental cleared" },
+    { id: id(), propertyName: "Highland Park Apartments", propertyType: "Multifamily", address: "2800 Highland Ave S, Birmingham, AL 35205", salePrice: 9800000, commission: 245000, commissionRate: 2.5, stage: "Under Contract", closeMonth: 7, client: "Greystar Properties", sqft: 78000, dealType: "Seller Rep", notes: "96-unit garden style, 98% occupied" },
+    { id: id(), propertyName: "Lakeview Hospitality Site", propertyType: "Land", address: "2900 7th Ave S, Birmingham, AL 35233", salePrice: 3200000, commission: 128000, commissionRate: 4.0, stage: "Listed", closeMonth: 8, client: "Hilton Development", sqft: 0, dealType: "Seller Rep", notes: "2.4 acres, zoned for hotel, Lakeview entertainment district" },
+    { id: id(), propertyName: "Pepper Place Creative Office", propertyType: "Office", address: "2829 2nd Ave S, Birmingham, AL 35233", salePrice: 1750000, commission: 61250, commissionRate: 3.5, stage: "Listed", closeMonth: 8, client: "Bayer Properties", sqft: 11000, dealType: "Sale", notes: "Creative/loft office in Pepper Place, fully renovated" },
+    { id: id(), propertyName: "Galleria Tower Lease", propertyType: "Office", address: "3300 Riverchase Galleria, Hoover, AL 35244", salePrice: 1200000, commission: 60000, commissionRate: 5.0, stage: "Prospecting", closeMonth: 9, client: "BBVA Financial Group", sqft: 12000, dealType: "Lease", notes: "10-year lease, build-to-suit TI" },
+    { id: id(), propertyName: "Avondale Brewing District", propertyType: "Mixed-Use", address: "201 41st St S, Birmingham, AL 35222", salePrice: 4500000, commission: 135000, commissionRate: 3.0, stage: "Prospecting", closeMonth: 10, client: "Avondale Partners LLC", sqft: 28000, dealType: "Sale", notes: "Brewery + retail + 8 apartments, stabilized" },
+    { id: id(), propertyName: "280 Corridor Flex Space", propertyType: "Industrial", address: "4800 US-280, Birmingham, AL 35242", salePrice: 2600000, commission: 91000, commissionRate: 3.5, stage: "Prospecting", closeMonth: 11, client: "Flex Space Investors LLC", sqft: 32000, dealType: "Buyer Rep", notes: "Flex industrial / R&D, 280 corridor growth area" },
+  ];
+
+  const recurringExpenses = [
+    { category: "Office Rent & Utilities", description: "Downtown office lease — 20th St", amount: 2800 },
+    { category: "Technology & Software", description: "CoStar + LoopNet subscription", amount: 450 },
+    { category: "Technology & Software", description: "CRM — Salesforce license", amount: 175 },
+    { category: "Brokerage Split / Desk Fee", description: "SVN desk fee", amount: 500 },
+    { category: "Insurance (E&O / General)", description: "E&O professional liability", amount: 320 },
+    { category: "Administrative / VA", description: "Virtual assistant — transaction coordination", amount: 1200 },
+    { category: "Marketing & Advertising", description: "Social media management", amount: 600 },
+    { category: "Travel & Auto", description: "Auto lease + gas allowance", amount: 750 },
+  ];
+
+  const variableExpenses = [
+    { category: "Marketing & Advertising", description: "Direct mail campaign — industrial", amount: 1800, months: [0,3] },
+    { category: "Marketing & Advertising", description: "Birmingham Business Journal ad", amount: 2200, months: [1,4] },
+    { category: "Photography & Staging", description: "Drone photography — Riverside Lofts", amount: 850, months: [1] },
+    { category: "Photography & Staging", description: "Matterport 3D tour — Summit Medical", amount: 600, months: [0] },
+    { category: "Client Entertainment", description: "Client dinner — Capital Grille", amount: 380, months: [0,2,4] },
+    { category: "Client Entertainment", description: "BHM commercial RE roundtable", amount: 275, months: [1,3,5] },
+    { category: "Professional Development", description: "CCIM Institute course — CI 101", amount: 1500, months: [2] },
+    { category: "Professional Development", description: "ICSC RECon conference", amount: 2800, months: [4] },
+    { category: "MLS & Listing Fees", description: "LoopNet premium listing boost", amount: 350, months: [0,1,2,3,4,5] },
+    { category: "MLS & Listing Fees", description: "CREXi featured listing", amount: 200, months: [2,5] },
+    { category: "Legal & Compliance", description: "Contract review — attorney", amount: 750, months: [1,3] },
+    { category: "Legal & Compliance", description: "License renewal + CE credits", amount: 425, months: [5] },
+    { category: "Travel & Auto", description: "Client site visits — Trussville portfolio", amount: 180, months: [3,4] },
+    { category: "Photography & Staging", description: "Virtual staging — Highland Park listing", amount: 400, months: [5] },
+    { category: "Marketing & Advertising", description: "Offering memorandum — print", amount: 650, months: [0,2,4] },
+    { category: "Other", description: "Closing gift — crystal paperweight", amount: 120, months: [0,1,2,3,4,5] },
+  ];
+
+  const demoExpenses = [];
+
+  // Add recurring for each month (Jan–May = months 0–5)
+  for (let mo = 0; mo <= 5; mo++) {
+    recurringExpenses.forEach(re => {
+      demoExpenses.push({
+        id: id(), category: re.category, description: re.description,
+        amount: re.amount, month: mo, recurring: true,
+      });
+    });
+  }
+
+  // Add variable
+  variableExpenses.forEach(ve => {
+    ve.months.forEach(mo => {
+      demoExpenses.push({
+        id: id(), category: ve.category, description: ve.description,
+        amount: ve.amount, month: mo, recurring: false,
+      });
+    });
+  });
+
+  return {
+    deals: demoDeals,
+    expenses: demoExpenses,
+    goals: { monthlyGCI: 60000, annualVolume: 20000000, closedDeals: 30 },
+  };
+}
+
 // ════════════════════════════════════════════════
 //  REUSABLE COMPONENTS
 // ════════════════════════════════════════════════
@@ -380,13 +466,33 @@ export default function Home() {
   const [editingExpense, setEditingExpense] = useState(null);
   const [showThemePicker, setShowThemePicker] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [isDemo, setIsDemo] = useState(false);
 
   const t = THEMES[themeKey] || THEMES.midnight;
+
+  function loadDemo() {
+    setData(generateDemoData());
+    setIsDemo(true);
+    setSelectedMonth(3); // April — good mid-year view with data
+    setView("dashboard");
+  }
+
+  function clearDemo() {
+    setData(getInitialData());
+    setIsDemo(false);
+    setSelectedMonth(new Date().getMonth());
+  }
 
   // ── Load persisted data ──
   useEffect(() => {
     const saved = loadData();
-    if (saved) setData(prev => ({ ...prev, ...saved }));
+    if (saved) {
+      setData(prev => ({ ...prev, ...saved }));
+      // Check if it looks like demo data is loaded
+      if (saved.deals && saved.deals.length > 0 && saved.deals.some(d => d.propertyName === "Parkside Office Tower")) {
+        setIsDemo(true);
+      }
+    }
     setThemeKey(loadTheme());
     setLoaded(true);
   }, []);
@@ -500,6 +606,7 @@ export default function Home() {
   function resetAllData() {
     if (confirm("Are you sure? This deletes ALL deals, expenses, and goals permanently.")) {
       setData(getInitialData());
+      setIsDemo(false);
     }
   }
 
@@ -588,7 +695,75 @@ export default function Home() {
           </div>
         </header>
 
+        {/* ═══ DEMO BANNER ═══ */}
+        {isDemo && (
+          <div style={{
+            background: `linear-gradient(90deg, ${t.accent}22, ${t.accent}08)`,
+            borderBottom: `1px solid ${t.accent}33`,
+            padding: "10px 28px",
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            flexWrap: "wrap", gap: 8,
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 16 }}>🎭</span>
+              <span style={{ fontSize: 13, fontWeight: 500, color: t.accent }}>DEMO MODE</span>
+              <span style={{ fontSize: 13, color: t.textSecondary }}>— Showing sample Birmingham CRE broker data. All data is fictional.</span>
+            </div>
+            <button onClick={clearDemo} style={{
+              background: "rgba(248,113,113,0.15)", color: "#F87171",
+              border: "1px solid rgba(248,113,113,0.3)", borderRadius: 6,
+              padding: "5px 14px", fontSize: 12, fontWeight: 600,
+              cursor: "pointer", fontFamily: "'DM Sans', sans-serif",
+            }}>Exit Demo</button>
+          </div>
+        )}
+
         <main style={{ padding: "24px 28px", maxWidth: 1400, margin: "0 auto" }}>
+
+          {/* ═══ EMPTY STATE — Show when no data and not in demo ═══ */}
+          {!isDemo && data.deals.length === 0 && data.expenses.length === 0 && view === "dashboard" && (
+            <div style={{
+              textAlign: "center", padding: "60px 20px", marginBottom: 24,
+              background: `linear-gradient(135deg, ${t.card}, ${t.accent}08)`,
+              border: `1px dashed ${t.accent}44`, borderRadius: 16,
+            }}>
+              <div style={{ fontSize: 56, marginBottom: 16 }}>🏢</div>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 600, marginBottom: 8 }}>
+                Welcome to Broker<span style={{ color: t.accent }}>Ledger</span>
+              </h2>
+              <p style={{ color: t.textSecondary, fontSize: 15, maxWidth: 500, margin: "0 auto 24px", lineHeight: 1.6 }}>
+                Track your commercial real estate deals, commissions, expenses, and pipeline — all in one place.
+              </p>
+              <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+                <button onClick={loadDemo} style={{
+                  background: t.accent, color: "#fff", border: "none",
+                  borderRadius: 10, padding: "14px 28px", fontSize: 15,
+                  fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans', sans-serif",
+                  boxShadow: `0 4px 20px ${t.accent}44`,
+                  transition: "transform 0.2s, box-shadow 0.2s",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = `0 8px 30px ${t.accent}55`; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = `0 4px 20px ${t.accent}44`; }}
+                >
+                  🎭 Load Demo Data
+                </button>
+                <button onClick={() => openDeal(null)} style={{
+                  background: "transparent", color: t.text, border: `1px solid ${t.border}`,
+                  borderRadius: 10, padding: "14px 28px", fontSize: 15,
+                  fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans', sans-serif",
+                  transition: "border-color 0.2s",
+                }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = t.accent}
+                onMouseLeave={e => e.currentTarget.style.borderColor = t.border}
+                >
+                  + Add Your First Deal
+                </button>
+              </div>
+              <p style={{ color: t.textMuted, fontSize: 12, marginTop: 16 }}>
+                Demo loads 20 realistic deals, 6 months of expenses, and pre-set goals
+              </p>
+            </div>
+          )}
 
           {/* ═══════════ DASHBOARD ═══════════ */}
           {view === "dashboard" && (
@@ -928,6 +1103,20 @@ export default function Home() {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              <div style={{ background: `${t.accent}08`, border: `1px solid ${t.accent}22`, borderRadius: 14, padding: 24, marginBottom: 20 }}>
+                <h3 style={{ fontSize: 14, fontWeight: 600, color: t.accent, marginBottom: 8 }}>🎭 Demo Mode</h3>
+                <p style={{ fontSize: 13, color: t.textSecondary, marginBottom: 16 }}>
+                  {isDemo
+                    ? "Demo data is currently loaded. Exit demo to start fresh with your own data."
+                    : "Load sample data to explore the app with realistic Birmingham CRE broker data — 20 deals, 6 months of expenses, and pipeline activity."
+                  }
+                </p>
+                {isDemo
+                  ? <Btn t={t} variant="secondary" onClick={clearDemo}>Exit Demo Mode</Btn>
+                  : <Btn t={t} onClick={loadDemo}>🎭 Load Demo Data</Btn>
+                }
               </div>
 
               <div style={{ background: "rgba(248,113,113,0.05)", border: "1px solid rgba(248,113,113,0.2)", borderRadius: 14, padding: 24 }}>
